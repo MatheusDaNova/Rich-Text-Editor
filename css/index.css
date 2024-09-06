@@ -13,7 +13,7 @@
     --sat: 100%;
     --title-color: ;
     --title-color-dark: ;
-    --text-color: ;
+    --text-color: hsl(229, 91%, 8%);
     --body-color: hsl(125, 52%, 33%);
     --container-color: hsl(0, 0%, 100%);
   
@@ -65,7 +65,7 @@ body{
 
 .container{
     background-color: var(--container-color);
-    width: 90vmin;
+    width: 150vmin;
     padding: 50px 30px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -91,4 +91,46 @@ button{
     flex-wrap: wrap;
     align-items: center;
     gap: 15px;
+}
+
+.types_text{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#Filename,
+select {
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+}
+
+.input-wrapper label,
+.options label,
+.options select{
+    font-family: var(--body-font);
+}
+
+input[type="color"]{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 40px;
+    height: 25px;
+    border:none;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 14px;
+    box-shadow: 0 0 0 2px var(--container-color), 0 0 0 3px var(--text-color);
+}
+
+#text-input {
+    margin-top: 10px;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    height: 50vh;
 }

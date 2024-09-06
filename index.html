@@ -11,10 +11,11 @@
 </head>
 <body>
     <div class="container">
+        
         <div class="options">
 
             <!-- undo/redo-->
-            
+
             <button id="undo" class="option-button-format">
                 <span class="material-symbols-outlined">
                     undo
@@ -25,6 +26,55 @@
                     redo
                 </span>
             </button>
+
+            <!-- inputs text's format-->
+
+            <div class="types_text">
+                <input type="text" placeholder="Filename" value="Untitled" id="Filename">
+                <select name="" id="">
+                    <option value="" selected="" hidden="" disabled="">File</option>
+                    <option value="new">New file</option>
+                    <option value="txt">Salvar como txt</option>
+                    <option value="pdf">Salvar como Pdf</option>
+                </select>
+                <select name="" id="font_name" class="adv-potion-button">
+                    <option value="" selected="" hidden="" disabled="">Roboto</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <select name="" id="format" class="adv-potion-button">
+                    <option value="" selected="" hidden="" disabled="">Format</option>
+                    <option value="h1">H1</option>
+                    <option value="h2">H2</option>
+                    <option value="h3">H3</option>
+                    <option value="h4">H4</option>
+                    <option value="h5">H5</option>
+                    <option value="h6">H6</option>
+                    <option value="p">Paragraph</option>
+                </select>
+                <select name="" id="font_size" class="adv-potion-button">
+                    <option value="" selected="" hidden="" disabled="">Font Size</option>
+                    <option value="xs">Extra small</option>
+                    <option value="s">Small</option>
+                    <option value="r">Regular</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                    <option value="xl">Extra Large</option>
+                </select>
+            </div>
+
+            <!-- Colors -->
+            
+            <div class="input-wrapper">
+                <input type="color" class="adv-potion-button" id="color">
+                <label for="color">Color</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="color" class="adv-potion-button" id="bgcolor">
+                <label for="color'">Background</label>
+            </div>
 
             <!-- Options-->
 
@@ -117,7 +167,17 @@
                     format_indent_decrease
                 </span>
             </button>
+            
+            <!-- HTML-->
+
+            <button id="code" class="option-button-format">
+                <span class="material-symbols-outlined">
+                    code
+                </span>
+            </button>
         </div>
+        <div id="text-input" contenteditable="true"></div>
     </div>
+    <script src="html/script"></script>
 </body>
 </html>
