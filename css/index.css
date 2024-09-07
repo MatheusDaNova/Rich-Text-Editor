@@ -15,7 +15,8 @@
     --title-color-dark: ;
     --text-color: hsl(229, 91%, 8%);
     --body-color: hsl(125, 52%, 33%);
-    --container-color: hsl(0, 0%, 100%);
+    --container-color: hsl(122, 50%, 90%);
+    --text-input-color: hsl(0,0%, 100%);
   
     /*========== Font and typography ==========*/
     --body-font:  "Roboto", sans-serif;
@@ -84,6 +85,7 @@ button{
     background-color: var(--container-color);
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 .options {
@@ -106,6 +108,11 @@ select {
     border-radius: 3px;
 }
 
+.input-wrapper{
+    font-family: var(--body-font);
+    font-weight: var(--font-medium);
+}
+
 .input-wrapper label,
 .options label,
 .options select{
@@ -126,11 +133,18 @@ input[type="color"]{
 input[type="color"]::-webkit-color-swatch {
     border-radius: 14px;
     box-shadow: 0 0 0 2px var(--container-color), 0 0 0 3px var(--text-color);
+    border-color: var(--text-input-color);
 }
 
 #text-input {
     margin-top: 10px;
-    border: 1px solid #dddddd;
+    border: 1px solid hsl(0, 0%, 57%);
     padding: 20px;
     height: 50vh;
+    background-color: var(--text-input-color);
+}
+
+.active{
+    background-color: var(--text-input-color);
+    border: solid 1px hsl(0, 0%, 57%); 
 }
