@@ -16,12 +16,12 @@
 
             <!-- undo/redo-->
 
-            <button id="undo" class="option-button-format">
+            <button id="undo" class="option-button">
                 <span class="material-symbols-outlined">
                     undo
                     </span>
             </button>
-            <button id="redo" class="option-button-format">
+            <button id="redo" class="option-button">
                 <span class="material-symbols-outlined">
                     redo
                 </span>
@@ -37,9 +37,6 @@
                     <option value="txt">Salvar como txt</option>
                     <option value="pdf">Salvar como Pdf</option>
                 </select>
-                <select name="" id="font_name" class="adv-option-button">
-                    <option value="" selected="" hidden="" disabled="">Roboto</option>
-                </select>
                 <select name="" id="format" class="adv-option-button">
                     <option value="" selected="" hidden="" disabled="">Format</option>
                     <option value="h1">H1</option>
@@ -50,56 +47,54 @@
                     <option value="h6">H6</option>
                     <option value="p">Paragraph</option>
                 </select>
+                <select name="" id="font_name" class="adv-option-button">
+                    <option value="" selected="" hidden="" disabled="">Roboto</option>
+                </select>
                 <select name="" id="font_size" class="adv-option-button">
                     <option value="" selected="" hidden="" disabled="">Font Size</option>
-                    <option value="xs">Extra small</option>
-                    <option value="s">Small</option>
-                    <option value="r">Regular</option>
-                    <option value="m">Medium</option>
-                    <option value="l">Large</option>
-                    <option value="xl">Extra Large</option>
+                    
                 </select>
             </div>
 
             <!-- Colors -->
             
-            <div class="input-wrapper">
+            <div class="input-wrapper adv-option-button">
                 <input type="color" class="adv-option-button" id="color">
                 <label for="color">Color</label>
             </div>
-            <div class="input-wrapper">
+            <div class="input-wrapper adv-option-button">
                 <input type="color" class="adv-option-button" id="bgcolor">
                 <label for="color">Background</label>
             </div>
 
             <!-- Options-->
 
-            <button id="bold" class="option-button-format format">
+            <button id="bold" class="option-button format">
                 <span class="material-symbols-outlined">
                     format_bold
                 </span>
             </button>
-            <button id="italic" class="option-button-format format">
+            <button id="italic" class="option-button format">
                 <span class="material-symbols-outlined">
                     format_italic
                 </span>
             </button>
-            <button id="underline" class="option-button-format format">
+            <button id="underline" class="option-button format">
                 <span class="material-symbols-outlined">
                     format_underlined
                 </span>
             </button>
-            <button id="strikethrough" class="option-button-format format">
+            <button id="strikethrough" class="option-button format">
                 <span class="material-symbols-outlined">
                     format_strikethrough
                 </span>
             </button>
-            <button id="superscript" class="option-button-format script">
+            <button id="superscript" class="option-button script">
                 <span class="material-symbols-outlined">
                     superscript
                 </span>
             </button>
-            <button id="subscript" class="option-button-format script">
+            <button id="subscript" class="option-button format script">
                 <span class="material-symbols-outlined">
                     subscript
                 </span>
@@ -107,12 +102,12 @@
             
             <!-- List -->
 
-            <button id="list_numbered" class="option-button-format">
+            <button id="insertOrderedList" class="option-button">
                 <span class="material-symbols-outlined">
                     format_list_numbered
                 </span>
             </button>
-            <button id="list" class="option-button-format">
+            <button id="insertUnorderedList" class="option-button">
                 <span class="material-symbols-outlined">
                     list
                 </span>
@@ -120,12 +115,12 @@
             
             <!--links-->
 
-            <button id="add_link" class="option-button-format">
+            <button id="add_link" class="adv-option-button">
                 <span class="material-symbols-outlined">
                     add_link
                 </span>
             </button>
-            <button id="link_off" class="option-button-format">
+            <button id="link_off" class="option-button">
                 <span class="material-symbols-outlined">
                     link_off
                 </span>
@@ -133,32 +128,32 @@
 
             <!-- Alligment-->
 
-            <button id="format_align_justify" class="option-button-format align">
+            <button id="justify" class="option-button align">
                 <span class="material-symbols-outlined">
                     format_align_justify
                 </span>
             </button>
-            <button id="format_align_right" class="option-button-format align">
+            <button id="justify_right" class="option-button align">
                 <span class="material-symbols-outlined">
                     format_align_right
                 </span>
             </button>
-            <button id="format_align_center" class="option-button-format align">
+            <button id="justify_center" class="option-button align">
                 <span class="material-symbols-outlined">
                     format_align_center
                 </span>
             </button>
-            <button id="format_align_left" class="option-button-format align">
+            <button id="justify_left" class="option-button format align">
                 <span class="material-symbols-outlined">
                     format_align_left
                 </span>
             </button>
-            <button id="format_indent_increase" class="option-button-format spacing">
+            <button id="indent" class="option-button spacing">
                 <span class="material-symbols-outlined">
                     format_indent_increase
                 </span>
             </button>
-            <button id="format_indent_decrease" class="option-button-format spacing">
+            <button id="format_indent_decrease" class="option-button spacing">
                 <span class="material-symbols-outlined">
                     format_indent_decrease
                 </span>
@@ -166,13 +161,15 @@
             
             <!-- HTML-->
 
-            <button id="code" class="option-button-format">
+            <button id="code" class="option-button format">
                 <span class="material-symbols-outlined">
                     code
                 </span>
             </button>
         </div>
-        <div id="text-input" contenteditable="true"></div>
+        <div id="text-input" contenteditable="true">
+        
+        </div>
     </div>
     <script src="script/script.js"></script>
 </body>

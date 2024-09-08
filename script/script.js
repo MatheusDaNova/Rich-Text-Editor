@@ -1,6 +1,6 @@
 let optionsButtons = document.querySelectorAll(".option-button");
-let advancedOptionButton = document.querySelectorAll(".adv-option_button");
-let fontName = document.getElementById("font_name");
+let advancedOptionButton = document.querySelectorAll(".adv-option-button");
+let fontName = document.getElementById("font_name")
 let fontSize = document.getElementById("font_size");
 let writingArea = document.getElementById("text-input");
 let linkButton = document.getElementById("add_link");
@@ -10,7 +10,6 @@ let formatButtons = document.querySelectorAll(".format");
 let scriptButtons = document.querySelectorAll(".script");
 
 //List font list
-
 let fontList = [
     "Roboto",
     "Arial",
@@ -41,10 +40,10 @@ let fontList = [
             let option = document.createElement("option");
             option.value = i;
             option.innerHTML = i;
-            fontSizeRef.appendChild(option);
+            fontSize.appendChild(option);
         }
 
-        fontSizeRef.value = 3;
+        fontSize.value = 3;
     }
 //HIGHLIGHT CLICKED BUTTON
 const highlighter = (className, needsRemoval) =>{
@@ -80,15 +79,29 @@ const modifyText = (command, defaultUi, value) => {
     document.execCommand(command, defaultUi, value);
 };
 
+//options
 optionsButtons.forEach((button) => {
     button.addEventListener("click", () => {
         modifyText(button.id, false, null);
     });
-})
+});
 
+//options colors
 advancedOptionButton.forEach((button) => {
     button.addEventListener("change", () => {
         modifyText(button.id, false, button.value);
     });
-})
+});
+
+//link
+linkButton.addEventListener("click", () => {
+    let userLink = prompt("Enter a URL");
+
+    if (/http/i.test(userLink)) {
+      modifyText(linkButton.id, false, userLink);
+    } else {
+      userLink = "http://" + userLink;
+      modifyText(linkButton.id, false, userLink);
+    }
+  });
 window.onload = initializer();
