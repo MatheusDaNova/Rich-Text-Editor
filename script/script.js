@@ -8,6 +8,9 @@ let alignButtons = document.querySelectorAll(".align");
 let spacingButtons = document.querySelectorAll(".spacing");
 let formatButtons = document.querySelectorAll(".format");
 let scriptButtons = document.querySelectorAll(".script");
+const showCode = document.getElementById('code');
+let active = false;
+const filename = document.getElementById('filename');
 
 //List font list
 let fontList = [
@@ -104,4 +107,45 @@ linkButton.addEventListener("click", () => {
       modifyText(linkButton.id, false, userLink);
     }
   });
+
+  showCode.addEventListener('click', function () {
+	showCode.dataset.active = !active;
+	active = !active
+	if(active) {
+		content.textContent = content.innerHTML;
+		content.setAttribute('contenteditable', false);
+	} else {
+		content.innerHTML = content.textContent;
+		content.setAttribute('contenteditable', true);
+	}
+});
+
+function fileHandle(value) {
+	if(value === 'new') {
+		content.innerHTML = '';
+		filename.value = 'untitled';
+	} else if(value === 'txt') {
+		const blob = new Blob([content.innerText])
+		const url = URL.createObjectURL(blob)
+		const link = document.createElement('a');
+		link.href = url;
+		link.download = `${filename.value}.txt`;
+		link.click();
+	} else if(value === 'pdf') {
+		html2pdf(content).save(filename.value);
+	}
+};
+
+writingArea.addEventListener('mouseenter', function () {
+	const a = writingArea.querySelectorAll('a');
+	a.forEach(item=> {
+		item.addEventListener('mouseenter', function () {
+			writingArea.setAttribute('contenteditable', false);
+			item.target = '_blank';
+		})
+		item.addEventListener('mouseleave', function () {
+			writingArea.setAttribute('contenteditable', true);
+		})
+	})
+});
 window.onload = initializer();
