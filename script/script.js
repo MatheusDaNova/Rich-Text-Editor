@@ -3,7 +3,7 @@ let advancedOptionButton = document.querySelectorAll(".adv-option-button");
 let fontName = document.getElementById("font_name")
 let fontSize = document.getElementById("font_size");
 let writingArea = document.getElementById("text-input");
-let linkButton = document.getElementById("add_link");
+let linkButton = document.getElementById("createLink");
 let alignButtons = document.querySelectorAll(".align");
 let spacingButtons = document.querySelectorAll(".spacing");
 let formatButtons = document.querySelectorAll(".format");
@@ -60,7 +60,6 @@ const highlighter = (className, needsRemoval) =>{
                 }
             
                 highlighterRemover(className);
-
                 if(!alreadyActive){
                     button.classList.add("active");
                 }
