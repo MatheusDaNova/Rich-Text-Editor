@@ -11,6 +11,7 @@ let scriptButtons = document.querySelectorAll(".script");
 const showCode = document.getElementById('code');
 let active = false;
 const filename = document.getElementById('filename');
+const content = document.getElementById('text-input');
 
 //List font list
 let fontList = [
@@ -135,16 +136,4 @@ function fileHandle(value) {
 	}
 };
 
-writingArea.addEventListener('mouseenter', function () {
-	const a = writingArea.querySelectorAll('a');
-	a.forEach(item=> {
-		item.addEventListener('mouseenter', function () {
-			writingArea.setAttribute('contenteditable', false);
-			item.target = '_blank';
-		})
-		item.addEventListener('mouseleave', function () {
-			writingArea.setAttribute('contenteditable', true);
-		})
-	})
-});
 window.onload = initializer();
