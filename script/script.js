@@ -1,7 +1,7 @@
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
-let fontName = document.getElementById("font_name")
-let fontSize = document.getElementById("font_size");
+let fontName = document.getElementById("fontName")
+let fontSize = document.getElementById("fontSize");
 let writingArea = document.getElementById("text-input");
 let linkButton = document.getElementById("createLink");
 let alignButtons = document.querySelectorAll(".align");
@@ -15,7 +15,6 @@ const content = document.getElementById('text-input');
 
 //List font list
 let fontList = [
-    "Roboto",
     "Arial",
     "Times New Roman",
     "Courier New",
@@ -78,6 +77,7 @@ const highlighterRemover = (className) => {
     });
 }
 
+//main logic
 const modifyText = (command, defaultUi, value) => {
     document.execCommand(command, defaultUi, value);
 };
@@ -89,7 +89,7 @@ optionsButtons.forEach((button) => {
     });
 });
 
-//options colors
+//options with parameters
 advancedOptionButton.forEach((button) => {
     button.addEventListener("change", () => {
         modifyText(button.id, false, button.value);
@@ -108,6 +108,7 @@ linkButton.addEventListener("click", () => {
     }
   });
 
+  //show html
   showCode.addEventListener('click', function () {
 	showCode.dataset.active = !active;
 	active = !active
@@ -120,6 +121,7 @@ linkButton.addEventListener("click", () => {
 	}
 });
 
+//download file
 function fileHandle(value) {
 	if(value === 'new') {
 		content.innerHTML = '';
